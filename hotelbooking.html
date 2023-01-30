@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Hotel Booking</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='hotelbooking.css'>
+    <link rel="icon" type="image/x-icon" href="icon1.png">
+    </head>
+<body>
+    <h1 >HOTEL BOOKING</h1>
+    <br>
+    <br>
+    <form name="booking" action="hbook.jsp" class="form-container" onsubmit = "validate()">
+        <table>
+          <tr>
+            <th>
+    <button onclick="openForm1()" class="open-button" >CHECK IN</button>
+    <div class="form-popup" id="CheckinForm">
+          <h1>Check In Date</h1>
+          <input type="date" id="checkin" name="checkin" required>
+    </div>
+  </th>
+  <th>
+    <button onclick="openForm2()" class="open-button">CHECK OUT</button>
+    <div class="form-popup" id="CheckoutForm">
+          <h1>Check Out Date</h1>
+          <input type="date" id="checkout" name="checkout" required>
+    </div>
+  </th>
+  <th>
+    <button onclick="openForm3()" class="open-button">CHECK IN TIME</button>
+    <div class="form-popup" id="CheckinTimeForm">
+          <h1>Check In Time</h1>
+          <input type="time" id="checkinTime" name="checkinTime" required>
+    </div>
+  </th>
+  <th>
+<button onclick="openForm4()" class="open-button">ROOMS AND GUEST</button>
+<div class="form-popup" id="GRForm">
+      <h1>Rooms & Guest</h1>
+      <p>ROOM 1
+<br>
+        ADULTS (12y +)</p>
+      
+      <div class="slidecontainer">
+        <input type="range"  min="0" max="15" value="15" class="slidera" id="myRange" name="adults">
+        <p>No of Adults: <span id="demo"></span></p>
+      </div>
+
+      <p>
+        CHILDREN (Age 12y and below)</p>
+              <div class="slidecontainer">
+                <input type="range"  min="0" max="15" value="15" class="sliderc" id="myRange1" name="children">
+                <p>No of Children: <span id="demo1"></span></p>
+            </div>
+</div>
+</th>
+</tr>
+</table>
+<br><br><br>
+<label class="roomprice">Price per Day : </label>
+<select>
+  <option class="price" value="below1000">500-1000Rupees</option>
+  <option class="price" value="1000-2000">1000-2000Rupees</option>
+  <option class="price" value="2000-5000">2000-5000Rupees</option>
+  <option class="price" value="above5000">5000+Rupees</option>
+</select>
+<button type="submit" class="btn">SUBMIT</button>
+<button type="reset" value="Reset"   class="btn cancel">RESET</button>
+</form>
+<script>
+    function openForm1() {
+        document.getElementById("CheckinForm").style.display = "block";
+      }
+    function openForm2() {
+        document.getElementById("CheckoutForm").style.display = "block";
+      }
+    function openForm3() {
+        document.getElementById("CheckinTimeForm").style.display = "block";
+      }
+  function openForm4() {
+  document.getElementById("GRForm").style.display = "block";
+}
+{
+let slidera = document.getElementById("myRange");
+let output = document.getElementById("demo");
+output.innerHTML = slidera.value;
+
+slidera.oninput = function() {
+  output.innerHTML= this.value;
+}
+}
+
+{
+let sliderc = document.getElementById("myRange1");
+let output = document.getElementById("demo1");
+output.innerHTML = sliderc.value;
+
+sliderc.oninput = function() {
+  output.innerHTML = this.value;
+}
+}
+function validate() {
+        var checkin = document.booking.checkin;    
+        var checkout = document.booking.checkout;    
+        var checkinTime = document.booking.checkinTime;      
+        var adults = document.booking.adults;    
+        var children = document.booking.children;  
+
+        if (checkin.value.length <= 0) {    
+            alert("checkin is required");    
+            checkin.focus();    
+            return false;    
+        }   
+         if (checkout.value.length <= 0) {    
+            alert("checkout is required");    
+            checkout.focus();    
+            return false;    
+        }    
+        if (checkinTime.value.length <= 0) {    
+            alert("checkinTime is required");    
+            checkinTime.focus();    
+            return false;    
+        }      
+        if (adults.value.length <= 0) {    
+            alert("Room and guest  is required");    
+            adults.focus();    
+            return false;    
+        }          
+        if (children.value.length <= 0) {    
+            alert("Room and guest  is required");    
+            children.focus();    
+            return false;
+        }    
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="hotellist.css">
+<link rel="icon" type="image/x-icon" href="icon1.png">
+
+</head>
+<body>
+
+<h2>Search Hotels</h2>
+<div class="text">
+<div class="row">
+  <div class="left" style="background-color:#bbb;">
+    <h2>Hotels</h2>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+      <li><a href="oceanheritage.html" >Hotel Ocean Heritage</a></li>
+      <li><a href="hotelpalmyragrandsuite.html" >Hotel Palmyra Grand Suite</a></li>
+      <li><a href="hotelsridevi.html" >Hotel Sridevi</a></li>
+      <li><a href="hoteljeyam.html" >Hotel Jeyam</a></li>
+      <li><a href="annairesort&spa.html" >Annai Resort & Spa</a></li>
+    </ul>
+  </div>
+</div>
+
+<span>
+  <h2 class="text1">
+  Book Room in Your Favourite and Comfortable Hotels
+</h2>
+<br><br><br><br><br><br><br>
+<h3>
+  For any help contact us:04651-754735467
+</h3>
+</span>
+</div>
+<script>
+function myFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>

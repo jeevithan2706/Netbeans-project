@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Tourism</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="icon1.png">
+<style>
+h1 {background-color:white;
+color: darkcyan;}
+form {font-family:CASTELLAR;}
+h2{font-family:CASTELLAR;}
+h4{font-family:CASTELLAR;}
+button{background-color:black; color:white;}
+a{color: white;}
+button{border-radius: 12px;}
+
+.li{
+	border: none;
+	border-bottom: 2px solid #050505;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 13%;
+	transition: .2s;
+}
+.li:active,
+.li:focus,
+.li:hover {
+	outline: none;
+	border-bottom-color: rgb(255, 89, 255);
+}
+.b1:active{background-color: greenyellow;
+color: black;}
+.b1:hover{color: black;background-color: white;border-collapse: inherit;}
+.a1:hover{color: aqua;text-decoration: none}
+.a1:not(active){color:navajowhite;text-decoration: none;}
+.a2{text-decoration: none}
+.a2:hover{text-decoration: none;color: aqua}
+</style>
+<script>
+    function validate() 
+    {
+        var username=document.login.username;
+        var password=document.login.password;
+        if (username.value.length <=0){
+                    alert("username is requied");
+                    username.focus();
+                    return false;
+                }     
+        if (password.value.length <=0){
+                    alert("password is requied");
+                    password.focus();
+                    return false;
+                } 
+    }    
+</script>
+</head>
+<body background="bg1.jpg">
+<center><h1 style="font-family:CASTELLAR;"><br>TORISM<br><br></h1></center><br><br><br>
+<center>
+<form name="login" action="login.jsp" method="post" onsubmit="return validate()">
+<center><h2>LOGIN</h2></center>
+<label><i style='font-size:15px' class='fas'>&#xf406;</i></label>
+<input type="text" class="li" name="username" placeholder="username" size="10"/>
+<br><br><br>
+<label><i style='font-size:15px' class="fas fa-key"></i></label>
+<input type="password" class="li" name="password" placeholder="password" size="10"/>
+<br><br><br><br>
+<button class="b1" type="submit" value="submit">Sign in</button>
+<button class="b1" type="reset" value="reset">Reset</button>
+<br></br>
+<center><a class="a2" href="changepassword.html">Change Password</a></center>
+</form>
+</center>
+<center><h4 style="color:white;">Don't have an account yet?&nbsp&nbsp<a href="user registation.html" class="a1">sign up</a></h4></center>
+<center><img src="logo1.jpg" height="100" width="100"></center>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</body>
+</html>

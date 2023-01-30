@@ -1,0 +1,91 @@
+
+<html>
+    <head>
+        <title>
+            cab booking
+        </title>
+        <link rel="icon" type="image/x-icon" href="icon1.png">
+        <script>    
+            function validate() {    
+                var fname = document.booking.fname;    
+                var currentlocation = document.booking.currentlocation;    
+                var destination = document.booking.destination;  
+                var noofpassengers = document.booking.noofpassengers;    
+                var dateofbooking = document.booking.dateofbooking;    
+                var timeofbooking = document.booking.timeofbooking;  
+                      
+        
+                if (fname.value.length <= 0) {    
+                    alert("Name is required");    
+                    fname.focus();    
+                    return false;    
+                }    
+                if (currentlocation.value.length <= 0) {    
+                    alert("current location is required");    
+                    currentlocation.focus();    
+                    return false;    
+                }    
+                if (destination.value.length <= 0) {    
+                    alert("destination point is required");    
+                    destination.focus();    
+                    return false;    
+                }    
+                if (noofpassengers.value.length <= 0) {    
+                    alert("no of passengers is required");    
+                    noofpassengers.focus();    
+                    return false;    
+                }    
+                if (dateofbooking.value.length <= 0) {    
+                    alert(" date of booking is required");    
+                    dateofbooking.focus();    
+                    return false;    
+                }    
+                if (timeofbooking.value.length <= 0) {    
+                    alert("time of booking is required");    
+                    timeofbooking.focus();    
+                    return false;    
+                }     
+                }  
+                </script>
+    </head>
+    <body background="bg3.jpg"><br>
+        <br>
+        <center><h1 style="color:red;">CAB BOOKING</h1></center>
+            <form name="booking" action="cabbook.jsp" method="post" onsubmit="return validate()">
+                <center>
+            <table border="6px" cellpadding="6px" cellspacing="6px" bgcolor="black" ><br>
+            <tr bgcolor="black">
+            <th colspan="2" style="color:white;">CAB BOOKING</th>
+            </tr>
+            <tr>
+                <td><label style="color:white;">NAME</label></td>
+            <td><input type="text" name="fname" size="15"/></td><br>
+            </tr>
+            <tr>
+            <td><label style="color:white;">CURRENT LOCATION</label></td>
+            <td><input type="text" name="currentlocation" size="15"/></td><br>
+            </tr>
+            <tr>
+            <td><label style="color:white;">DESTINATION</label></td>
+            <td><input type="text" name="destination" size="15"/></td><br>
+            </tr>
+            <tr>
+            <td><label style="color:white;">NO OF PASSENGERS</label></td>
+            <td><input type="number" name="noofpassengers" /></td><br>
+            </tr>
+            <tr>
+                <td><label style="color: white;">DATE OF BOOKING </label></td>
+                <td><input type="date" name="dateofbooking" size="15"/></td>
+                            </tr>
+             <tr>
+                 <td><label style="color:white;"> TIME OF BOOKING</label></td>
+                 <td> <input type="time" name="timeofbooking" size="15"></td>
+             </tr>   
+             <tr>
+                <td><button type="submit" value="submit">Submit</button></td>
+                <td><button type="reset" value="reset">Reset</button></td>
+                </tr>
+                </table>
+            </form>
+                </body>
+                </html>

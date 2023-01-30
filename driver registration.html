@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Driver registration</title>
+         <link rel="icon" type="image/x-icon" href="icon1.png">
+        <script>
+             function validate() {    
+        var fname = document.booking.fname;    
+        var profilephoto = document.booking.profilephoto;    
+        var aadharcard = document.booking.aadharcard;      
+        var rcbook = document.booking.rcbook;    
+        var carphoto = document.booking.carphoto;  
+        var phone = document.booking.phone; 
+
+        if (fname.value.length <= 0) {    
+            alert("Name is required");    
+            fname.focus();    
+            return false;    
+        }    
+        if (profilephoto.value.length <= 0) {    
+            alert("Last Name is required");    
+            profilephoto.focus();    
+            return false;    
+        }    
+        if (aadharcard.value.length <= 0) {    
+            alert("Address is required");    
+            aadharcard.focus();    
+            return false;    
+        }      
+        if (rcbook.value.length <= 0) {    
+            alert("Email  is required");    
+            rcbook.focus();    
+            return false;    
+        }    
+        if (carphoto.value.length <= 0) {    
+            alert("carphoto is required");    
+            carphoto.focus();    
+            return false;    
+        }     
+        if (phone.value.length <= 0) {    
+            alert("carphoto is required");    
+            phone.focus();    
+            return false; 
+        }
+    }
+        </script>
+        <style>
+        table{padding: 15px;
+              border: 0ch;
+              background-color: lightcyan}
+        button{color:rgb(247, 15, 247);}
+        body{background-repeat: no-repeat;
+             background-size: 1300px 600px;}
+        h1{color: whitesmoke;
+           text-shadow: 3px 2px red}
+        </style>
+    </head>
+     <body background="img119.jpg">
+      <center><br><br><br>
+         <table border="6px" cellpadding="6px" cellspacing="6px" bgcolor="white"> 
+             <form name="booking" action="drivreg.jsp" method="post" onsubmit="return validate()">
+                <h1>Driver Registration</h1><br>
+            <tr> 
+            <td><label>Name</label></td>
+            <td><input type="text" name="fname" size="10"/></td>
+            </tr>
+            <tr>
+            <td><label>Profile photo</label></td>
+            <td><input type="file" name="profilephoto"/></td>
+            </tr>
+            <tr>
+            <td><label>Aadhar Card</label></td>
+            <td> <input type="file" name="aadharcard"/></td></tr>
+            <tr>
+            <td> <label>RC Book</label></td>
+            <td><input type="file" name="rcbook"/></td></tr>
+            <tr>
+            <td><label>Car Photo</label></td>
+            <td><input type="file" name="carphoto"/></td></tr>
+            <tr>
+            <td><label>Phone</label></td>
+            <td><input type="tel" pattern="[0-9]{10}" name="phone" size="10"/></td></tr>
+            <tr>
+                <td><button type="submit" value="Submit">Submit</button></td>
+                <td><button type="reset" value="reset">Reset</button></td>
+            </tr>
+               </form>
+            </table>
+    </body>
+</html>
